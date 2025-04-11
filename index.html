@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="css/style.css">
+  <title>Test App</title>
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+</head>
+
+<!-- Hello -->
+<html>
+  <body>
+
+    <nav class="navbar">
+      <div class="container">
+
+        <div class="logo">
+          <img src = "Images/Logo_Image.png" alt="Logo">
+        </div>
+
+        <div class="menu"> 
+           <!-- ul - unordered -->
+            <ul>
+              <!-- li - list item -->
+              <li> <a href="unfinished.html">Home</a> </li>
+              <li> <a href="unfinished.html">About Us</a> </li>
+              <li> <a href="unfinished.html">Contact</a> </li>
+            </ul>
+        </div>
+
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h2 class="xxl-text">
+             <span id="typewriter"></span>
+            </h2>
+          <p class="xl-text"> <i>@James Hall room 2098 at 2pm, Fridays</i></p>
+
+          <div class="container">
+            <img src="Images/image_test.png">
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+   
+    <section class="tools">
+      <div class="container">
+
+        <p class="tools-heading text-xl text-center">Concepts You'll Learn At The Committee</p>
+
+         <!-- Tools section -->
+        <div class="tools-grid">
+
+          <div class="card reveal">
+            <div class="container">
+              <img src="Images/Logos/HTML5_logo.png">
+            </div>
+            <p class="text-center text-md">HTML</p>
+            <p class="text-center">Also known as HyperText Markdown language!</p> 
+          </div>
+
+          <div class="card reveal">
+            <div class="container">
+              <img src="Images/Logos/css-logo.png">
+            </div>
+            <p class="text-center text-md">CSS</p>
+            <p class="text-center">Also known as Casscading Style Sheets!</p>
+          </div>
+
+
+          <div class="card reveal">
+            <div class="container">
+              <img src="Images/Logos/JavaScript-Logo.png">
+            </div>
+            <p class="text-center text-md">Javascript</p>
+            <p class="text-center">Not to be confused with Java!</p>
+          </div>
+      
+          <div class="card reveal">
+            <div class="container">
+              <img src="Images/Logos/react-Logo.png">
+            </div>
+            <p class="text-center text-md">React</p>
+            <p class="text-center">A Powerful Front End Framework!</p>
+          </div>
+
+          <div class="card reveal">
+            <div class="container">
+              <img src="Images/Logos/next-js-logo.png">
+            </div>
+            <p class="text-center text-md">Next.JS</p>
+            <p class="text-center">A Must Know Web Development Framwork!</p>
+          </div>
+
+
+          <div class="card reveal">
+            <div class="container">
+              <img src="Images/Logos/GitHub-Logo.png">
+            </div>
+            <p class="text-center text-md">GitHub</p>
+            <p class="text-center">An Industry standard Version Control Tool!</p>
+          </div>
+      </div>
+    </section>
+
+  </body>
+  
+  <script>
+    // Get all items with the reveal class
+    const reveals = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+        }
+      });
+    }, {
+      threshold: 0.1,
+    });
+
+    reveals.forEach(reveal => {
+      observer.observe(reveal);
+    });
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const text = "Rowan Web Dev Committee";
+      const speed = 75;
+      let i = 0;
+
+      function typeWriter() {
+        if (i < text.length) {
+          document.getElementById("typewriter").textContent += text.charAt(i);
+          i++;
+          setTimeout(typeWriter, speed);
+        } else {
+          setTimeout(() => {
+            document.getElementById("typewriter").style.borderRight = "none";
+          }, 2000);
+        }
+      }
+
+      typeWriter();
+    });
+
+  </script>
+  
+</html>
